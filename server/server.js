@@ -10,9 +10,10 @@ server.use(jsonServer.bodyParser);
 server.use((req, res, next) => {
   if (req.method === 'POST') {
     req.body.id = uuid();
-    res.setHeader('Set-Cookie', `cookie-cookies_cart-cookie=${req.body.id}`);
+    res.setHeader('Set-Cookie', `cookie-cookies_cart-cookie=${req.body.id};foo=bar`);
   }
-  console.log(res.body);
+  console.log(req.body);
+  console.log(res.header());
   next();
 });
 
