@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": "2ef2ec3f-af93-4164-81cc-29b188cb706b",
+      "price": "488.00",
+      "topping": "tenetur"
+    },
+    {
+      "id": "dc99a08e-5651-4972-a9c7-1c557a13d3d4",
+      "price": "97.00",
+      "topping": "eum"
+    },
+    {
+      "id": "125699aa-c383-46cd-99bc-11d0ca667d23",
+      "price": "16.00",
+      "topping": "labore"
+    },
+    {
+      "id": "1d6b2e66-bf28-4413-9a43-ba0e422368b0",
+      "price": "115.00",
+      "topping": "quod"
+    },
+    {
+      "id": "75a0262b-ef45-47ee-b379-94708811f2eb",
+      "price": "649.00",
+      "topping": "sunt"
+    },
+    {
+      "id": "1f67a1d0-f5c0-4d51-b1fb-49a29b8a361c",
+      "price": "525.00",
+      "topping": "similique"
+    },
+    {
+      "id": "27e220d4-d916-4986-81ef-877e5e2b7f5e",
+      "price": "537.00",
+      "topping": "excepturi"
+    },
+    {
+      "id": "3bd46789-db34-4910-9f8b-9d62a9e689a5",
+      "price": "166.00",
+      "topping": "ad"
+    },
+    {
+      "id": "3e5c327d-5611-44e9-91c1-766a7eb9cd48",
+      "price": "684.00",
+      "topping": "facilis"
+    },
+    {
+      "id": "1a904aed-756f-425e-ab83-eb863e8ffce7",
+      "price": "857.00",
+      "topping": "voluptates"
+    }
+  ]
+}
