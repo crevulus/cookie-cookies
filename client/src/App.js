@@ -20,38 +20,58 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { cookies } = this.props;
-    console.log(cookies)
-
     this.fetchProducts();
+    this.fetchCartData();
+  }
 
-    if (cookies.get('cookie-cookies_cart-cookie')) {
-      const sessionId = cookies.get('cookie-cookies_cart-cookie');
-      console.log(sessionId);
+  fetchCartData = () => {
+    const { cookies } = this.props;
+    const sessionId = cookies.get('cookie-cookies_cart-cookie');
+
+    if (sessionId) {
       fetch(`/carts/${sessionId}`)
         .then(res => res.json())
         .then(cart => this.setState({ cart }));
       return;
     }
 
-    fetch('/carts', {
-      method: "POST"
-    })
+    const fetchOptions = { method: 'POST' };
+    fetch('/carts', fetchOptions)
       .then(res => res.json())
       .then(cart => this.setState({ cart }));
   }
-
-  // addToCart = () => {
-  //   fetch('/carts/:id', {
-  //     method: "POST"
-  //   })
-  //     .then(res => res.json())
-  // }
 
   fetchProducts = () => {
     fetch('/products')
       .then(res => res.json())
       .then(products => this.setState({ products }));
+  }
+
+  addToCart = (productId) => {
+    const { products, cart } = this.state;
+    const productsInCart = cart.products || [];
+    const productToAdd = products.find(({ id }) => id === productId);
+
+    const updatedProducts = [...productsInCart, productToAdd];
+    // maybe move to its own method
+    const updatedCart = {
+      id: cart.id,
+      products: updatedProducts
+    };
+
+    this.setState({ cart: updatedCart });
+
+    const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedCart),
+    };
+
+    fetch(`/carts/${cart.id}`, options)
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   }
 
   render() {

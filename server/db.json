@@ -51,5 +51,26 @@
       "topping": "voluptates"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": "e5a6e8a2-4673-452c-b1ed-55a029d716a7",
+      "products": [
+        {
+          "id": "2ef2ec3f-af93-4164-81cc-29b188cb706b",
+          "price": "488.00",
+          "topping": "tenetur"
+        },
+        {
+          "id": "75a0262b-ef45-47ee-b379-94708811f2eb",
+          "price": "649.00",
+          "topping": "sunt"
+        },
+        {
+          "id": "1f67a1d0-f5c0-4d51-b1fb-49a29b8a361c",
+          "price": "525.00",
+          "topping": "similique"
+        }
+      ]
+    }
+  ]
 }
